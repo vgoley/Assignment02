@@ -62,7 +62,7 @@ namespace Assignment02
             Console.WriteLine(ContainsDuplicate(arr, k));
 
             Console.WriteLine("Question 7");
-            int rodLength = 10;
+            int rodLength = 4;
             int priceProduct = GoldRod(rodLength);
             Console.WriteLine(priceProduct);
 
