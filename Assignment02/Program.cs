@@ -32,7 +32,7 @@ namespace Assignment02
             string rs = StringReverse(s);
             Console.WriteLine(rs);
 
-            Console.WriteLine("\nQuestion 3");
+            Console.WriteLine("Question 3");
             int[] l2 = new int[] { 2, 2, 3, 5, 6 };
             int sum = MinimumSum(l2);
             Console.WriteLine(sum);
@@ -42,7 +42,7 @@ namespace Assignment02
             string sortedString = FreqSort(s2);
             Console.WriteLine(sortedString);
 
-            Console.WriteLine("\nQuestion 5-Part 1");
+            Console.WriteLine("Question 5-Part 1");
             int[] nums1 = { 1, 2, 2, 1 };
             int[] nums2 = { 2, 2 };
             int[] intersect1 = Intersect1(nums1, nums2);
@@ -106,35 +106,71 @@ namespace Assignment02
 
         // Question-2 reverse string of words
         public static string StringReverse(string s)
+
         {
+
             Stack<char> st = new Stack<char>();
+
+            StringBuilder reversedString = new StringBuilder();
+
             // Traverse given string and push 
+
             // all characters to stack until
+
             // we see a space. 
+
             for (int i = 0; i < s.Length; ++i)
             {
+
                 if (s[i] != ' ')
+
                 {
+
                     st.Push(s[i]);
+
                 }
                 // When we see a space, we 
+
                 // print contents of stack. 
+
                 else
+
                 {
+
                     while (st.Count > 0)
                     {
-                        Console.Write(st.Pop());
+                        string poppedValue = st.Pop().ToString();
+
+                        reversedString.Append(poppedValue);
+
+                        //Console.Write(st.Pop());
                     }
-                    Console.Write(" ");
+
+                    reversedString.Append(" ");
+
+                    //Console.Write(" ");
+
                 }
+
             }
+
             // Since there may not be 
+
             // space after last word. 
+
             while (st.Count > 0)
+
             {
-                Console.Write(st.Pop());
+
+                //Console.Write(st.Pop());
+
+                string poppedValue = st.Pop().ToString();
+
+                reversedString.Append(poppedValue);
             }
-            return s;
+
+            return reversedString.ToString();
+
         }
 
         //Question3
@@ -196,7 +232,7 @@ namespace Assignment02
                     res.Append(c.Key);
                 }
             }
-            Console.WriteLine(res.ToString());
+            //Console.WriteLine(res.ToString());
             return res.ToString();
         }
 
